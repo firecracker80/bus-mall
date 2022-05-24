@@ -1,7 +1,7 @@
 'use strict';
 
 //--------------------GLOBAL VARIABLES/IMPORTS
-let voteCount = 10;
+let voteCount = 25;
 let allProducts = [];
 
 //--------------------DOM REF
