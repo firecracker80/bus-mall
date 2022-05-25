@@ -24,6 +24,12 @@ function Products(name, fileExtension = 'jpeg'){
   allProducts.push(this);
 }
 
+
+// LS part 2 retrieve
+//parse data
+
+//easy way 
+
 new Products('sweep', 'png');
 new Products('bag');
 new Products('banana');
@@ -43,6 +49,42 @@ new Products('tauntaun');
 new Products('unicorn');
 new Products('water-can');
 new Products('wine-glass');
+
+//hard way ------running back through constructor
+
+// if(retreivedProducts){
+//   for(let i = 0; i < parsedProducts.length; i++){
+//     if(parsedProducts[i].name === 'sweep')
+//     let reconstructedSweep = new Products('sweep', 'png');
+//     reconstructedSweep.views = parsedProducts[i].views;
+//     reconstructedSweep.votes = parsedProducts[i].votes;
+//   } else{
+
+//   };
+// } else{
+//   new Products('sweep', 'png');
+//   new Products('bag');
+//   new Products('banana');
+//   new Products('bathroom');
+//   new Products('boots');
+//   new Products('breakfast');
+//   new Products('bubblegum');
+//   new Products('chair');
+//   new Products('cthulhu');
+//   new Products('dog-duck');
+//   new Products('dragon');
+//   new Products('pen');
+//   new Products('pet-sweep');
+//   new Products('scissors');
+//   new Products('shark');
+//   new Products('tauntaun');
+//   new Products('unicorn');
+//   new Products('water-can');
+//   new Products('wine-glass');
+// }
+
+
+
 
 //--------------------HELPR FUNCTIONS
 //got from w3resources--[math.floor(math.random()*allProducts.length)]
