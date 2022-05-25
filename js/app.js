@@ -1,7 +1,7 @@
 'use strict';
 
 //--------------------GLOBAL VARIABLES/IMPORTS
-let voteCount = 5;
+let voteCount = 25;
 let allProducts = [];
 
 //--------------------DOM REF
@@ -29,26 +29,33 @@ function Products(name, fileExtension = 'jpeg'){
 //parse data
 
 //easy way 
+let retreivedProducts = localStorage.getItem ('products');
 
-new Products('sweep', 'png');
-new Products('bag');
-new Products('banana');
-new Products('bathroom');
-new Products('boots');
-new Products('breakfast');
-new Products('bubblegum');
-new Products('chair');
-new Products('cthulhu');
-new Products('dog-duck');
-new Products('dragon');
-new Products('pen');
-new Products('pet-sweep');
-new Products('scissors');
-new Products('shark');
-new Products('tauntaun');
-new Products('unicorn');
-new Products('water-can');
-new Products('wine-glass');
+let parsedProducts = JSON.parse(retreivedProducts);
+
+if(retreivedProducts){
+  allProducts = parsedProducts;
+} else{
+  new Products('sweep', 'png');
+  new Products('bag');
+  new Products('banana');
+  new Products('bathroom');
+  new Products('boots');
+  new Products('breakfast');
+  new Products('bubblegum');
+  new Products('chair');
+  new Products('cthulhu');
+  new Products('dog-duck');
+  new Products('dragon');
+  new Products('pen');
+  new Products('pet-sweep');
+  new Products('scissors');
+  new Products('shark');
+  new Products('tauntaun');
+  new Products('unicorn');
+  new Products('water-can');
+  new Products('wine-glass');
+}
 
 //hard way ------running back through constructor
 
@@ -224,9 +231,14 @@ function handleClick(event){
     imgContainer.removeEventListener('click', handleClick);
     showResultsBtn.hidden= false;
     showResultsBtn.addEventListener('click', handleShowResults);
-  }
 
-  console.log(allProducts);
+    let strungProducts = JSON.stringify(allProducts);
+
+    console.log(strungProducts);
+
+    localStorage.setItem('products', strungProducts);
+
+  }
 }
 
 function handleShowResults(){
